@@ -78,9 +78,9 @@ end
       team.add_player(player_3)
       team.add_player(player_4)
 
-      expect(team.short_term_players).to eq [player_4]
-    
+      expect(team.short_term_players).to eq [player_2, player_4]
     end
+  end
 
   describe '#total_value' do
     it "returns a sum of every player's total_cost" do
@@ -114,7 +114,7 @@ end
       team.add_player(player_3)
       team.add_player(player_4)
       
-      expect(team.details).to == {"total_value" => 85200000, "player_count" => 4}
+      expect(team.details).to be == {"total_value" => 85200000, "player_count" => 4}
     end
   end
 end
