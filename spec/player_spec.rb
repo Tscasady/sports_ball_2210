@@ -57,4 +57,19 @@ RSpec.describe Player do
     expect(player.nickname).to eq 'Smile'
   end
 
+  it 'can return a boolean for whether or not the player is a short term player' do
+      player_1 = Player.new("Michael Palledorous" , 1000000, 36)
+      player_2 = Player.new("Kenny DeNunez", 500000, 24)
+
+      expect(player_1.short_term?).to be false
+      expect(player_2.short_term?).to be true
+  end
+
+  it 'can return a boolean for whether or not the player is a long term player' do
+    player_1 = Player.new("Michael Palledorous" , 1000000, 36)
+    player_2 = Player.new("Kenny DeNunez", 500000, 24)
+
+    expect(player_1.long_term?).to be true
+    expect(player_2.long_term?).to be false
+  end
 end

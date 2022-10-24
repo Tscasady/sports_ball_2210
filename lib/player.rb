@@ -24,4 +24,12 @@ class Player
   def set_nickname!(nickname)
     @nickname = nickname
   end
+
+  def short_term?
+    @contract_length <= 24
+  end
+
+  def long_term?
+    !short_term?
+  end
 end
