@@ -37,4 +37,23 @@ class Team
   def details
     {"total_value" => total_value, "player_count" => player_count}
   end
+
+  def average_cost_of_player
+    string_total = (total_value / player_count).to_s
+    inverse = string_total.chars.reverse
+    inverse.each_index do |index|
+      if (index + 1) % 4 == 0
+        inverse.insert(index, ",")
+      end
+    end
+  inverse.reverse.join.prepend('$')
+  end
+
+  def players_by_last_name
+    player_last_names = @roster.map do |player|
+                          player.last_name
+                        end
+    player_last_names.sort().join(', ')
+  end
+
 end
